@@ -1,0 +1,18 @@
+body{
+  background-color: rgb(162, 150, 150);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+h1{
+  color: white;
+}
+.todo-container{
+  width: 600px;
+}
