@@ -5,28 +5,32 @@ import './App.css'
 import Appname from './components/Appname'
 import InputContainer from './components/Appcontainer'
 import Todolist from './components/Todolist'
+import ErrorMessage from './components/ErrorMessage'
+import "bootstrap/dist/css/bootstrap.min.css"
 
 function App() {
-  const [count, setCount] = useState(0)
-  let list=[{
-    namelist:'Buy Milk',
-    duedate:'14-11-2022'
-  },
-   {
-    namelist:'Watching Movie',
-    duedate:'15-11-2022'
-   },
-   {
-    namelist:'Meeting',
-    duedate:'16-11-2022'
-   },
+  const [count, setCount] = useState(0);
+  const [list,setlist]=useState([]);
+  console.log(list.length);
 
-]
+ const handlesubmit=(value,duedate)=>{
+  const newlist=[...list,{ namelist:value,
+  duedate:duedate}]
+  setlist(newlist);
+ }
+ const handledelete=(taskname)=>{
+  const newlist=list.filter(item=>item.namelist!==taskname);
+  console.log(newlist);
+  setlist(newlist);
+  console.log(taskname);
+ }
 
   return <center class="todo-container">
     <Appname/>
-    <InputContainer/>
-    <Todolist names={list}/>
+    <InputContainer onclickadd={handlesubmit}/>
+  
+
+    <Todolist  key={list} names={list} onDeleteclick={handledelete}/>
     
   
    </center>   

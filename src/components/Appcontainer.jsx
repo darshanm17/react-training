@@ -1,23 +1,51 @@
-function InputContainer(){
-  return(
-    <div class="container-textcenter">
-    <div class="row">
-      <div class="col-4">
-      <form>
-        <div class='mb-3'>
-       
-          <input type='text' placeholder='Enter the task' class='form-control'id='inputtexttask'/>
-        </div> </form>
+import Inputtext from "./Inputtext";
+import Inputdate from "./Inputdate";
+import { useState } from "react";
+import styles from "./Appcontainer.module.css"
+const InputContainer = ({ onclickadd }) => {
+  const [textvalue, settextvalue] = useState("");
+  const [duedate, setduedate] = useState("");
+  const Inputvalue = (event) => {
+    console.log(event.target.value);
+    settextvalue(event.target.value);
+  };
+  const Inputduedate = (event) => {
+    console.log(event.target.value);
+    setduedate(event.target.value);
+    
+  };
+  const handlisubmitclicked = () => {
+    onclickadd(textvalue, duedate);
+    settextvalue("");
+    setduedate("");
+  };
+  return (
+    <div className={` container-textcenter`}>
+      <div className="row">
+        <div className="col-4">
+          <form>
+            <div className="mb-3">
+              <Inputtext Inputvalue={Inputvalue} textvalue={textvalue} />
+            </div>{" "}
+          </form>
         </div>
-        <div class="col-4"> 
-        <div class='mb-3'>
-          <input type='date' class='form-control input-with-post-icon datepicker'/>
-        </div></div>
-        <div class='col-4'>
-         <button class='btn btn-primary'>submit</button>
+        <div className="col-4">
+          <div className="mb-3">
+            <Inputdate Inputduedate={Inputduedate} datevalue={duedate} />
+          </div>
         </div>
-       </div>
-       </div>
-  )
-}
+        <div className="col-4">
+          <button
+            className="btn btn-primary"
+            onClick={() => {
+              handlisubmitclicked();
+            }}
+          >
+            submit
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
 export default InputContainer;
