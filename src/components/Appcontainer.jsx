@@ -1,6 +1,7 @@
 import Inputtext from "./Inputtext";
 import Inputdate from "./Inputdate";
 import { useState } from "react";
+import { IoMdAdd } from "react-icons/io";
 import styles from "./Appcontainer.module.css"
 const InputContainer = ({ onclickadd }) => {
   const [textvalue, settextvalue] = useState("");
@@ -41,7 +42,7 @@ const InputContainer = ({ onclickadd }) => {
               handlisubmitclicked();
             }}
           >
-            submit
+           <IoMdAdd />
           </button>
         </div>
       </div>

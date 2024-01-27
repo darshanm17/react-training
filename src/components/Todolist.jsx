@@ -1,4 +1,5 @@
 import './Todolist.css'
+import { MdDelete } from "react-icons/md";
 
 const Todolist=({names,onDeleteclick})=>{
 
@@ -18,7 +19,7 @@ const Todolist=({names,onDeleteclick})=>{
       ()=>{
         onDeleteclick(item.namelist);
       }
-     }>delete</button>
+     }><MdDelete /></button>
     </div>
     </div>
 
