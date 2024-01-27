@@ -1,7 +1,7 @@
 import './Todolist.css'
 
 const Todolist=({names,onDeleteclick})=>{
-  console.log(names);
+
   return(<> 
   <div className='listcontaienr'>
   {names.length!=0? names.map(item=>(

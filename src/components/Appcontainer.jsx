@@ -6,11 +6,11 @@ const InputContainer = ({ onclickadd }) => {
   const [textvalue, settextvalue] = useState("");
   const [duedate, setduedate] = useState("");
   const Inputvalue = (event) => {
-    console.log(event.target.value);
+  
     settextvalue(event.target.value);
   };
   const Inputduedate = (event) => {
-    console.log(event.target.value);
+  
     setduedate(event.target.value);
     
   };

@@ -11,7 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 function App() {
   const [count, setCount] = useState(0);
   const [list,setlist]=useState([]);
-  console.log(list.length);
+ 
 
  const handlesubmit=(value,duedate)=>{
   const newlist=[...list,{ namelist:value,
@@ -20,9 +20,9 @@ function App() {
  }
  const handledelete=(taskname)=>{
   const newlist=list.filter(item=>item.namelist!==taskname);
-  console.log(newlist);
+ 
   setlist(newlist);
-  console.log(taskname);
+ 
  }
 
   return <center class="todo-container">
@@ -30,7 +30,7 @@ function App() {
     <InputContainer onclickadd={handlesubmit}/>
   
 
-    <Todolist  key={list} names={list} onDeleteclick={handledelete}/>
+    <Todolist  key={list.namelist} names={list} onDeleteclick={handledelete}/>
     
   
    </center>   
