@@ -33,10 +33,10 @@ To get a copy of this project up and running on your local machine, follow these
 5. Open your web browser and visit http://localhost:3000 to view the app.
 
 ## Technologies Used
-1.React: A JavaScript library for building user interfaces.
-2.Vite: A fast build tool for modern web development.
-3.HTML/CSS: For structuring and styling the user interface.
-4.JavaScript: For implementing interactive functionality.
+- React: A JavaScript library for building user interfaces.
+- Vite: A fast build tool for modern web development.
+- HTML/CSS: For structuring and styling the user interface.
+- JavaScript: For implementing interactive functionality.
 
 ## Contributing
 Contributions are welcome! If you'd like to contribute to this project, feel free to open a pull request.
